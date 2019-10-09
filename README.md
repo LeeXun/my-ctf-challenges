@@ -8,7 +8,9 @@ Enjoy! :)
 
 - Solved Ratio: 5/720
 
-### Solution
+### Gopher party (O口o)!!!(O口o)!!!(O口o)!!!
+
+#### Solution
 
 0. Well, I spent lots of time on building the beautiful frontend page. Hope you like it :)
 1. In [go.mod](balsn-ctf-2019/gopher-party/go.mod) which can discover this is go1.13. But go scheduler was [released in go1.1](http://morsmachine.dk/go-scheduler) so this won't be a problem.
@@ -29,12 +31,12 @@ Enjoy! :)
 12. Which means you should find a language string in Accept-Language format that won't take too long in sha256 to complete the payload.
 13. Even though this is not a RCE exploit, most of the golang writers who don't REALLY understand how goroutine works, will easily encounter some unexpected issues and finally cause system impairment. ^(Owo)-o _(XoX)rz
 
-### Questions
+#### Questions
 
 1. Why can I get the flag when I am running the code at my local machine?
     - The connection between your golang server and redis is too fast. This is a trap.
 
-### Payload
+#### Payload
 
 ```bash
 # Google account name is name1
