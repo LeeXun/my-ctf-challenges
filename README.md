@@ -13,7 +13,7 @@ Enjoy! :)
 0. Well, I spent lots of time on building the beautiful frontend page. Hope you like it :)
 1. In [go.mod](balsn-ctf-2019/gopher-party/go.mod) which can discover this is go1.13. But go scheduler was [released in go1.1](http://morsmachine.dk/go-scheduler) so this won't be a problem.
 3. Looking into [main.go](balsn-ctf-2019/gopher-party/main.go), which can find my hint about setting `runtime.GOMAXPROCS(1)` and `t2.nano`.
-4. Global search "flag" and ignore the vendors, you may find there's only one target in [register.go]((balsn-ctf-2019/gopher-party/controller/register.go).
+4. Global search "flag" and ignore the vendors, you may find there's only one target in [register.go](balsn-ctf-2019/gopher-party/controller/register.go).
 5. Simple as it said: you should be the chosen to get the flag.
 6. However, after looking for where the sp is defined in [store/store.go](balsn-ctf-2019/gopher-party/store/store.go). You can discover that there's a goroutine keeps changing `the chosen` in every 2ms. 
 7. Now the goal is simple: <b>try not to be preempted by other goroutines</b>.
