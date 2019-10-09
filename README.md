@@ -6,14 +6,12 @@ Enjoy! :)
 
 ## Balsn CTF 2019
 
-- Difficulty: Hard
 - Solved Ratio: 5/720
 
 ### Solution
 
 0. Well, I spent lots of time on building the beautiful frontend page. Hope you like it :)
-1. Please don't ignore the frontend page. I hid the url of the backend source code in the first line of css comment.
-2. After getting the source code, in [go.mod](balsn-ctf-2019/gopher-party/go.mod) which can discover this is go1.13. But go scheduler was [released in go1.1](http://morsmachine.dk/go-scheduler) so this won't be a problem.
+1. In [go.mod](balsn-ctf-2019/gopher-party/go.mod) which can discover this is go1.13. But go scheduler was [released in go1.1](http://morsmachine.dk/go-scheduler) so this won't be a problem.
 3. Looking into [main.go](balsn-ctf-2019/gopher-party/main.go), which can find my hint about setting `runtime.GOMAXPROCS(1)` and `t2.nano`.
 4. Global search "flag" and ignore the vendors, you may find there's only one target in register.go.
 5. Simple as it said: you should be the chosen to get the flag.
@@ -35,6 +33,24 @@ Enjoy! :)
 
 1. Why did I get the flag when I was running your code at my local machine?
     - The connection between your golang server and redis is too fast. This is my trap :P.
+
+### Payload
+
+```bash
+# Google account name is name1
+TOKEN="access_token"
+HOST="http://localhost:8000/register"
+
+function poc()
+{
+  curl "${HOST}" \
+  -H 'accept-language: hu' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  --data "name=different_from_name1&access_token=${TOKEN}&interest=AH!&age=-1&praise=&prove="
+}
+
+poc
+```
 
 ---
 Copyright © Lee Xun, 2019
