@@ -24,9 +24,9 @@ Enjoy! :)
 9. <b>In conclusion:</b>
     1. Don't let unbuffered channels get blocked.
     1. Avoid making any RPC, like redis or google api. Which will cause netpolling.
-    1. Avoid accidentally making the stack size of goroutine being to large.
+    1. Avoid accidentally making the stack size of goroutine being too large.
     1. Avoid sleeping.
-10. And there's one that most of participants missed, <b>don't make the running time of your goroutine exceed 10ms</b>.
+10. And there's one more thing that most of participants missed, <b>don't make the running time of your goroutine exceed 10ms</b>.
 11. There's a sysmon which is running on a different OS thread then user goroutines. Which means, even if you avoid all the conditions above, OS may still swap you out and let sysmon set a magic value (0xfffffade) to your goroutine's stack edge address. When the next time your goroutine is up, it will be cheated that it's stack size is not enough. Then it will yield to next goroutine to execute on it's OS thread in the morestack function. As a result, this goroutine won't be the chosen one.
 12. Which means you should find a language string in Accept-Language format that won't take too long in sha256 to complete the payload.
 13. Even though this is not a RCE exploit, most of the golang writers who don't REALLY understand how goroutine works, will easily encounter some unexpected issues and finally cause system impairment. ^(Owo)-o _(XoX)rz
