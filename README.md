@@ -18,7 +18,7 @@ Enjoy! :)
 6. However, after looking for where the sp is defined in [store/store.go](balsn-ctf-2019/gopher-party/store/store.go). You can discover that there's a goroutine keeps changing `the chosen` in every 2ms. 
 7. Now the goal is simple: <b>try not to be preempted by other goroutines</b>.
 7. This is a challenge of how to avoid racing by the goroutine and other participants' requests!
-8. Actually, goroutine will not be preemted by others. Instead, <b>it 'yields' itself and switches context to other goroutines in a magic function which is injected by go compiler: morestack().</b> About the details of how it works, [please check my slides](https://github.com/LeeXun/slides).
+8. Actually, goroutine will not be preemted by others. Instead, <b>it 'yields' itself and switches context to other goroutines in a magic function which is injected by go compiler: morestack().</b>
 9. <b>In conclusion:</b>
     1. Don't let unbuffered channels get blocked.
     1. Avoid making any RPC, like redis or google api. Which will cause netpolling.
