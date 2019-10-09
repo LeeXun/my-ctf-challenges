@@ -6,9 +6,9 @@ Enjoy! :)
 
 ## Balsn CTF 2019
 
-- Solved Ratio: 5/720
-
 ### Gopher party (O口o)!!!(O口o)!!!(O口o)!!!
+
+- Solved Ratio: 5/720
 
 #### Solution
 
