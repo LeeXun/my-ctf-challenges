@@ -33,7 +33,7 @@ Enjoy! :)
 
 #### Questions
 
-1. Why can I get the flag when I am running the code at my local machine?
+1. Why can I get the flag sometimes when I am running the code at my local machine?
     - The connection between your golang server and redis is too fast. This is a trap.
 
 #### Payload
