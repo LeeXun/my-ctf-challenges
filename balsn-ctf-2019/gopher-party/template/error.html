@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<body>
+{{ if .email }}
+<p>There're {{ .userCountChinese }} Chinese participants.</p>
+<p>There're {{ .userCountLatin }} English participants.</p>
+<p>Your email: {{ .email }}</p>
+{{ end }}
+<form action="/queue" method="POST">
+<input type="text" name="name" value="{{ .name }}">
+<input type="text" name="email" value="{{ .email }}">
+<input type="submit" value="Send">
+</form>
+</body>
+</html>
