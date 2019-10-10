@@ -27,7 +27,7 @@ Enjoy! :)
     1. Avoid accidentally making the stack size of goroutine being too large.
     1. Avoid sleeping.
 10. And there's one more thing that most of participants missed, <b>don't make the running time of your goroutine exceed 10ms</b>.
-11. There's a sysmon which is running on a different OS thread then user goroutines. Which means, even if you avoid all the conditions above, OS may still swap your OS thread out for sysmon. When the sysmon detects that your goroutine has exceeded 10m, sysmon would set a magic value (0xfffffade) to your goroutine's stack edge address. The next time your goroutine is up, it would be cheated as if it's stack size is not enough. Then it would yield to next the goroutine in the morestack function. As a result, this goroutine won't be the chosen one.
+11. There's a sysmon which is running on a different OS thread then user goroutines. Which means, even if you avoid all the conditions above, OS may still swap your OS thread out for sysmon. When the sysmon detects that your goroutine has exceeded 10ms, sysmon would set a magic value (0xfffffade) to your goroutine's stack edge address. The next time your goroutine is up, it would be cheated as if it's stack size is not enough. Then it would yield to next the goroutine in the morestack function. As a result, this goroutine won't be the chosen one.
 12. That is, you should find a language string in Accept-Language format that won't take too long in sha256 to complete the payload.
 13. Even though this is not a RCE exploit, most of the golang writers who don't REALLY understand how goroutine works, will easily encounter some unexpected issues and finally lead to system impairment. ^(Owo)-o _(XoX)rz
 
