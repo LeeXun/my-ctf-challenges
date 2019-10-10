@@ -40,6 +40,7 @@ Enjoy! :)
 
 ```bash
 # Google account name is name1
+# name1 shouldn't contain any char in the range of https://github.com/LeeXun/my-ctf-challenges/blob/master/balsn-ctf-2019/gopher-party/config/config.go#L8
 TOKEN="access_token"
 HOST="http://localhost:8000/register"
 
